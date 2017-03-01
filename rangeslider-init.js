@@ -8,12 +8,19 @@ jQuery(document).ready(function($){
     var $inputRange = $('#rangeslider');
 
     $inputRange.rangeslider({
-        polyfill: false
+        polyfill: false,
+        onSlide: function(position, value) {
+          valueOutput(value);
+         }
     });
 
     function valueOutput(element) {
-        var value = element.value,
-            output = document.getElementById('rangeslider_output');
+        if (element.value === undefined) {
+          var value = element;
+        } else {
+          var value = element.value;
+        }
+        var output = document.getElementById('rangeslider_output');
         $('#score').val(value);
         output.innerHTML = value;
         $('#rangeslider_output').removeClass().addClass('shortscore shortscore-' + value);
@@ -23,9 +30,7 @@ jQuery(document).ready(function($){
         valueOutput($inputRange[i]);
     }
 
-    $document.on('change', 'input[type="range"]', function (e) {
-        valueOutput(e.target);
-    });
+
 
     $.fn.removeClassPrefix = function(prefix) {
         this.each(function(i, el) {
