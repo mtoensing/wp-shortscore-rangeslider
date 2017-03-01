@@ -4,7 +4,7 @@
   Plugin Name: SHORTSCORE Rangeslider
   Plugin URI: http://www.shortscore.org
   Description: Frontend slider for the shortscore dropdown.
-  Version: 1.0
+  Version: 1.1
   Author: MarcDK
   Author URI: http://www.marc.tv
   GitHub Plugin URI: mtoensing/wp-shortscore-rangeslider
